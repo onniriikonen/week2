@@ -11,17 +11,24 @@ function addData(event) {
 
     const usernameInput = document.createElement("td");
     usernameInput.textContent = username;
-    newRow.appendChild(usernameCell);
+    newRow.appendChild(usernameInput);
 
     const emailInput = document.createElement("td");
     emailInput.textContent = email;
-    newRow.appendChild(emailCell);
+    newRow.appendChild(emailInput);
 
     const adminInput = document.createElement("td");
     adminInput.textContent = admin;
-    newRow.appendChild(adminCell);
+    newRow.appendChild(adminInput);
 
     table.appendChild(newRow);
 }
 
+function emptyTable() {
+    const table = document.getElementById("table");
+    table.innerText = '';
+}
+
 document.getElementById("form").addEventListener("submit", addData);
+
+document.getElementById('empty-table').addEventListener('click', emptyTable);
